@@ -1,0 +1,23 @@
+<section class="login-container">
+    <div class="container d-flex align-items-center justify-content-center ">
+        <div class="rounded border border-secondary col-sm-6 m-3 p-3">
+        
+        <form id="FrmLogin" action="login" method="POST" class="form-horizontal">
+            <div class="container">
+                <h1>login</h1>
+                <div class="row m-3" style="height: 35px;">
+                   <div class="col-sm-9"><input class="col-sm-6" type="text" name="usuari" id="usuari" placeholder="usuari"></div>
+                </div>
+                <div class="row m-3">
+                    <div class="col-sm-9"> <input class="col-sm-6" type="password" name="contrasenya" id="contrasenya" placeholder="password"></div>
+                </div>
+                <div class="row m-3">
+                    <div class="col-sm-9"></div>
+                    <div class="col-sm-3"> <input type="submit" value='Entrar' class="btn btn-secondary btn-sm" ></div>
+                </div>
+              </div> 
+        </form>
+           </div>
+           <div id='missatge'>{{ MISSATGE }}</div>
+    </div>
+</section>

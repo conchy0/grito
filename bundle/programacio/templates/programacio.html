@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programació d'Artistes</title>
+</head>
+<body class="programacio">
+    <!-- Filtres de cerca -->
+    <div class="filters-container">  
+        <input type="time" id="hora_inici" name="hora_inici" min="01:00" max="23:59">
+        
+        <!-- Filtres per escenari -->
+        <select id="escenari">
+            <option value="">Seleccionar escenari</option>
+            <option value="Vibra Stage">Vibra Stage</option>
+            <option value="No es Ruido">No es Ruido</option>
+            <option value="Ravers Stage">Ravers Stage</option>
+            <option value="Makina Stage">Makina Stage</option>
+        </select>
+        
+        <!-- Filtres per estil -->
+        <select id="estil">
+            <option value="">Seleccionar estil</option>
+            <option value="Rap">Rap</option>
+            <option value="Trap">Trap</option>
+            <option value="Hard Techno">Hard Techno</option>
+            <option value="Techno">Techno</option>
+        </select>
+
+        <!-- Cercador de nom -->
+        <input class="nomInput" type="text" id="buscador" placeholder="Nom de l'artista">
+
+        <!-- Ordenar per hora d'inici -->
+        <select id="ordre_hora">
+            <option value="">Ordenar per hora</option>
+            <option value="asc">Ascendent</option>
+            <option value="desc">Descendent</option>
+        </select>
+    </div>
+    
+    <!-- Contenidor d'artistes -->
+    <div class="artistas-container">
+        {% for artista in artistes %}
+        <div id="fitxaArtista">
+            <img src="{{ artista.imatge_url }}" class="artista-imatge">
+            <div class="artista" data-hora="{{ artista.hora_inici }}" data-escenari="{{ artista.nom_espai }}" data-estil="{{ artista.nom_tipus }}" data-nom="{{ artista.nom }}">
+                <strong>{{ artista.nom }}</strong>
+                <p>Hora d'inici: {{ artista.hora_inici }}</p>
+                <p>Hora de fi: {{ artista.hora_fi }}</p>
+                <p>Escenari: {{ artista.nom_espai }}</p>
+                <p>Estil: {{ artista.nom_tipus }}</p>
+            </div>
+        </div>
+        {% else %}
+            <p>No hi ha artistes disponibles.</p>
+        {% endfor %}
+    </div>
+
+    <script>
+        // Funció per filtrar artistes
+        function filtrarArtistes() {
+            var horaInici = document.getElementById('hora_inici').value;
+            var escenari = document.getElementById('escenari').value;
+            var estil = document.getElementById('estil').value;
+            var buscador = document.getElementById('buscador').value.toLowerCase();
+            
+            var artistes = document.querySelectorAll('#fitxaArtista');
+            
+            //per cada artista
+            artistes.forEach(function(fitxaArtista) {
+                var hora = fitxaArtista.querySelector('.artista').getAttribute('data-hora');
+                var escenari1 = fitxaArtista.querySelector('.artista').getAttribute('data-escenari');
+                var estil1 = fitxaArtista.querySelector('.artista').getAttribute('data-estil');
+                var nom = fitxaArtista.querySelector('.artista').getAttribute('data-nom').toLowerCase();
+
+                var mostrar = true;
+                
+                
+                if (horaInici && !hora.startsWith(horaInici)) {
+                    mostrar = false;
+                }
+
+                if (escenari && escenari1 !== escenari) {
+                    mostrar = false;
+                }
+
+                if (estil && estil1 !== estil) {
+                    mostrar = false;
+                }
+
+                if (buscador && !nom.includes(buscador)) {
+                    mostrar = false;
+                }
+    
+                //si es true mostrarem l'artista
+                if (mostrar) {
+                    fitxaArtista.style.display = 'block'; 
+                    fitxaArtista.querySelector('.artista-imatge').style.display = 'block'; 
+                } else {
+                    fitxaArtista.style.display = 'none'; // Amaga tota la fitxa
+                    fitxaArtista.querySelector('.artista-imatge').style.display = 'none'; 
+                }
+            });
+        }
+
+        // Funció per ordenar artistes per hora d'inici
+        function ordenarArtistes() {
+            var ordre = document.getElementById('ordre_hora').value;
+            var container = document.querySelector('.artistas-container');
+            var artistes = Array.from(container.querySelectorAll('#fitxaArtista'));
+
+            artistes.sort(function(a, b) {
+                var horaA = a.querySelector('.artista').getAttribute('data-hora');
+                var horaB = b.querySelector('.artista').getAttribute('data-hora');
+
+            if (ordre === 'asc') {
+                    if (horaA < horaB) {
+                    return -1;
+                } else if (horaA > horaB) {
+                    return 1;
+                }
+            } else if (ordre === 'desc') {
+                if (horaA > horaB) {
+                return -1;
+                } else if (horaA < horaB) {
+                return 1;
+                }
+            }
+            return 0;
+
+            });
+
+            artistes.forEach(function(artista) {
+                container.appendChild(artista); // Reorganitza els elements
+            });
+        }
+
+        // Afegir esdeveniments per filtrar i ordenar
+        document.getElementById('hora_inici').addEventListener('input', filtrarArtistes);
+        document.getElementById('escenari').addEventListener('change', filtrarArtistes);
+        document.getElementById('estil').addEventListener('change', filtrarArtistes);
+        document.getElementById('buscador').addEventListener('input', filtrarArtistes);
+        document.getElementById('ordre_hora').addEventListener('change', ordenarArtistes);
+    </script>
+</body>
+</html>

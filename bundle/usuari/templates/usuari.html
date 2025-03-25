@@ -1,0 +1,47 @@
+<body>
+    <section class="usuari-container">
+        <table border="1">
+            <head>
+                <tr>
+                    
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Hora d'Inici</th>
+                    <th>Hora de Fi</th>
+                    <th>Espai</th>
+                    <th>Tipus</th> 
+                    <th>Imatge</th> 
+                    <th style="display: none;">Accions</th>
+                </tr>
+            </head>
+            <tbody>
+            {% for artista in artistes %}
+                <tr>
+                    
+                        
+                    <td>s{{ artista.id_artista }}</td>
+                    <td>{{ artista.nom }}</td>
+                    <td>{{ artista.hora_inici }}</td>
+                    <td>{{ artista.hora_fi }}</td>
+                    <td>{{ artista.nom_espai }}</td>
+                    <td>{{ artista.nom_tipus }}</td>
+                  
+                  <td><img src="{{ artista.imatge_url }}" class="artista-imatge-login" width="10px" height="10px"></td>  
+                  <td class="botonsAccions">
+                    <a href="usuari/editar/{{ artista.id_artista }}" class="btnEditar" name="editar">📝</a>
+                    <a href="usuari/eliminar/{{ artista.id_artista }}" class="btnEliminar" name="eliminar">❌</a>
+    
+                </td>
+                </tr>
+            {% else %}
+            <tr>
+                <td colspan="6">No hi ha artistes</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+        </table>
+        <a href="usuari/afegir" class="btnAfegir">Afegir Artista</a>
+    </body>
+    </html>
+    </section>
+    

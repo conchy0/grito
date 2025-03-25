@@ -1,0 +1,40 @@
+<section class="editar-container">
+    <form action="./usuari/editar/{{ artista.id_artista }}" method="POST" enctype="multipart/form-data">
+
+        <input type="hidden" name="id_artista" value="{{ artista.id_artista }}">
+    
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" value="{{ artista.nom }}" required><br>
+    
+        <label for="hora_inici">Hora d'Inici:</label>
+        <input type="time" name="hora_inici" value="{{ artista.hora_inici }}" required><br>
+    
+        <label for="hora_fi">Hora de Fi:</label>
+        <input type="time" name="hora_fi" value="{{ artista.hora_fi }}" required><br>
+    
+        <label for="espai">Espai:</label>
+        <select name="espai" required>
+            <option value="Vibra Stage" {% if artista.nom_espai == 'Vibra Stage' %}selected{% endif %}>Vibra Stage</option>
+            <option value="No es Ruido" {% if artista.nom_espai == 'No es Ruido' %}selected{% endif %}>No es Ruido</option>
+            <option value="Ravers Stage" {% if artista.nom_espai == 'Ravers Stage' %}selected{% endif %}>Ravers Stage</option>
+            <option value="Makina Stage" {% if artista.nom_espai == 'Makina Stage' %}selected{% endif %}>Makina Stage</option>
+        </select><br>
+    
+        
+        <label for="tipus">Tipus:</label>
+        <select name="tipus" required>
+        <option value="4" {% if artista.id_tipus == 4 %}selected{% endif %}>Rap</option>
+        <option value="3" {% if artista.id_tipus == 3 %}selected{% endif %}>Trap</option>
+        <option value="1" {% if artista.id_tipus == 1 %}selected{% endif %}>Techno</option>
+        <option value="2" {% if artista.id_tipus == 2 %}selected{% endif %}>Hard Techno</option>
+        </select><br>
+    
+        <label for="imatge">Imatge:</label>
+        <input type="file" name="imatge_file" id="imatge_file"  accept="image/*"><br>
+        
+    
+        <button type="submit">Guardar Canvis</button>
+    </form>
+</section>
+
+

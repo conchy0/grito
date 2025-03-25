@@ -1,0 +1,11 @@
+Options -Indexes
+Options FollowSymLinks
+Options SymLinksIfOwnerMatch
+RewriteEngine On
+RewriteBase /Grito
+AddType application/x-httpd-php .php .phtml
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php [QSA,L]

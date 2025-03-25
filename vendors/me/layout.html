@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <base href="{{ WEBBASE }}" />
+    <meta charset="UTF-8" />
+    <title>{{ TITOL }}</title> 
+    <meta name="description" content="{{ DESCRIPCIO }}" />
+    <link rel="stylesheet" href="{{ ESTILS }}" type="text/css"/>
+    <link href="https://fonts.cdnfonts.com/css/akira-expanded" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <meta http-equiv="cache-control" content="no-cache">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>	
+<body>
+<header>
+    {% if LOGAT %}
+        <h2 style="text-align: right;">
+            <span class="boto">
+                {{ LOGIN_USER }}
+                <a class="nav-link" href="login/logout">(desconectar)</a>  
+                           
+            </span>
+        </h2>
+    {% else %}
+        <!-- <h1 id="GironaFestival">Grito Festival</h1> -->
+        <li><a class="GironaFestival" href="">Grito Festival</a></li> 
+    {% endif %}
+    
+    <nav>
+        <ul>
+            {% if LOGAT %}
+                <li><a href="./usuari">ADMIN</a></li>   
+            {% endif %}
+            <li><a href="./programacio">Programacio</a></li>    
+            <li><a href="./festival">Festival</a></li>  
+            <li><a href="./mapa">Mapa</a></li>  
+            <li><a href="./quiSom">quiSom</a></li>   
+            {% if not LOGAT %}
+                <li><a href="./login"><i class="fas fa-user"></i></a></li>
+            {% endif %}
+            <a href="#" id="changeColor">
+                <i class="fas fa-moon icon-moon"></i>  
+                <i class="fas fa-sun icon-sun" style="display: none;"></i> 
+            </a>
+        </ul>
+    </nav>
+    
+</header>
+<main> 
+{{ HTMLCOS | raw }}
+    <footer>
+        <p>Contacte</p>
+        <div class="footer-images">
+            <img src="images/sanMiguel.png" alt="San Miguel" />
+            <img src="images/cocacola.png" alt="Coca Cola" />
+            <img src="images/estrella.png" alt="Estrella" />
+            <img src="images/jackDaniels.png" alt="Jack Daniels" />
+        </div>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>    
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a> 
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a> 
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a> 
+        </div>
+    
+        <script src="styles/changeColor.js"></script>
+    </footer>
+</main> 
+</body>
+</html>

@@ -1,0 +1,36 @@
+<section class="afegir-container">
+    <form action="./usuari/afegir" method="POST" enctype="multipart/form-data">
+
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" required><br>
+    
+        <label for="hora_inici">Hora d'Inici:</label>
+        <input type="time" name="hora_inici" required><br>
+    
+        <label for="hora_fi">Hora de Fi:</label>
+        <input type="time" name="hora_fi" required><br>
+    
+        <label for="espai">Espai:</label>
+        <select name="espai" required>
+            <option value="Vibra Stage">Vibra Stage</option>
+            <option value="No es Ruido">No es Ruido</option>
+            <option value="Ravers Stage">Ravers Stage</option>
+            <option value="Makina Stage">Makina Stage</option>
+        </select><br>
+    
+        <label for="tipus">Tipus:</label>
+        <select name="tipus" required>
+            <option value="4">Rap</option>
+            <option value="3">Trap</option>
+            <option value="1">Techno</option>
+            <option value="2">Hard Techno</option>
+        </select><br>
+    
+        <label for="imatge">Imatge:</label>
+        <input type="file" name="imatge_file" accept="image/*"><br>
+    
+        <button type="submit">Afegir Artista</button>
+    
+    </form>
+</section>
+

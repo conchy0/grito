@@ -1,0 +1,589 @@
+
+* {
+	box-sizing: border-box;
+	font-family: 'Akira Expanded', sans-serif;                                           
+}
+html,body {
+	font-family: verdana;
+	/*max-width: 400vw;*/
+	margin: auto;
+	background-color: #000000;
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
+	transition: background-color 0.3s ease, color 0.3s ease;
+	height: 100%;
+	margin: 0;
+	color: white;
+	
+}
+
+main{
+	position: fixed;
+	top: 10%;
+	width: 100%;
+	bottom: 0;
+	overflow: auto;
+	
+}
+
+#changeColor{
+	position: relative;
+	top: 1px;
+}
+body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+.icon-sun { 
+    display: block;
+}
+
+.icon-moon {
+    display: none;
+}
+li {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.GironaFestival {
+	color: #ffffff;
+	font-size: 130%;
+	cursor: pointer;
+	text-decoration: none;
+	
+}
+
+
+.GironaFestival:hover {
+	color: #0e1e5e;
+	text-decoration: none;
+}
+
+
+footer {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 20px;
+    padding: 20px 30px; 
+    color: rgb(0, 0, 0);
+    background-color: #C7C7C7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.festival-container{
+	min-height: 90.6vh;
+}
+
+.programacio-container{
+	min-height: 100vh;
+}
+
+.portada-container{
+	min-height: 87.4vh;
+	
+}
+.quiSom-container{
+	min-height: 74.4vh;
+}
+.mapa-container{
+	min-height: 60vh;
+}
+.login-container{
+	min-height: 56.6vh;
+}
+.usuari-container{
+	min-height: 76.3vh;
+}
+
+.usuari-container{
+	min-height: 76.3vh;
+}
+
+.editar-container{
+	min-height: 75vh;
+}
+
+.afegir-container{
+	min-height: 75vh;
+}
+
+.footer-images {
+    display: flex;
+    justify-content: center;
+    gap: 11%;
+}
+
+.footer-images img {
+    width: 6%; 
+    height: auto;     
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 24px; 
+    color: black; 
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #2976f8; 
+}
+
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+    padding: 0;	
+}
+
+nav li {
+	display: inline;
+	margin-right: 15px;
+	font-size: 13px;
+}
+
+nav a {
+	color: white;
+	padding: 5px 10px;
+	border-radius: 10px;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+}
+
+nav a:hover {
+	color: #0e1e5e;
+	text-decoration: none;
+}
+
+/* Forms */
+.container{
+	margin-top: 25vh;
+	margin-left: 21%;
+	
+
+}
+
+.container h1{
+	padding-top: 10px;
+	
+}
+input[type="submit"], input[type="reset"] {
+	background: #3C41FF;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 20px;
+	border: 0px;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+	background: #0e1e5e;
+	color: #EEEEEE;
+	cursor: pointer;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+	width: 350px;
+	/* margin-top: 10px;  */
+	border-radius: 20px;
+	border: 1px solid #aaaaaa;
+	padding: 0.3em;
+	font-family: 'Montserrat';
+	
+}
+
+input[type="submit"] {
+	width: 350px;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.boto{
+	color: #ffffff;
+}
+
+.nav-link{
+	font-size: 13px;
+	font-family: 'Montserrat';
+}
+
+textarea {
+	border-radius: 5px;
+	border: 1px solid #aaaaaa;
+	width: 483px;
+	height: 90px;
+}
+header {
+	height: 10%;
+    background-color: #3C41FF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0px 30px;  
+    box-sizing: border-box;  
+    z-index: 1000;  
+}
+
+
+.gironaTitle{
+	color: #3C41FF; 
+	font-size: 18vw;
+	margin-top: -85px;
+	display: flex;
+	justify-content: center;
+}
+
+.imatgeLogo {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;  
+	margin-top: 15vh;
+    left: 50%;  
+    transform: translateX(-50%);
+	z-index: 1000;
+}
+.imatgeLogo img {
+    max-width: 100%;  
+    height: auto;     
+}
+
+.dataTitle{
+	color: #3C41FF; 
+	font-size: 18vw;
+    position: absolute;
+	top: 0;
+	left: 18%;
+	margin-top: 43vh;
+	display: flex;
+	justify-content: center;
+
+}
+
+
+#mapa {
+    justify-content: center;
+	margin-top: -15%;
+	scale: 70%;
+	margin-left: -12%;
+	
+
+}
+
+.titolFestival{
+	font-size: 400px;
+	margin-top: -6%;
+	margin-left: 6%;
+	color: #3C41FF;
+	
+}
+ .titolRaves{
+	font-size: 400px;
+	margin-left: 6%;
+	position: absolute;
+	top: 0;
+	margin-top: 7.2%;
+	transform: rotate(180deg) scaleX(-1);
+	z-index: -1;
+} 
+
+.parrafFestival{
+	margin-top: -6%;
+	font-family: 'Montserrat';
+	width: 50%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-left: 25%;
+}
+
+.quiSom{
+	 
+	font-size: 10vw;
+	width: 10px;
+	margin-top: 2%;
+	margin-left: 2%;
+	
+}
+
+.quiSomParref{
+	font-family: 'Montserrat';
+	width: 30%;
+
+	margin-left: 2%;
+	
+	margin-top: -7%;
+}
+
+
+.artistas-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding: 20px;
+
+}
+
+.artista {
+	background-color: #3C41FF;
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+	transition: transform 0.3s ease;
+	cursor: pointer;
+}
+
+.artista-imatge {
+    width: 63.5vh;              
+    height: 250px;             
+    object-fit: cover;         
+    border-radius: 10px 10px 0 0; 
+}
+
+.artista img {
+    display: block;          
+}
+
+
+.artista p{
+	font-family: 'Montserrat';
+	font: bold;
+}
+.artista:hover {
+	transform: scale(1.05);
+}
+
+.artista strong {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+	color: #ffffff;
+}
+
+.artista p {
+	margin: 5px 0;
+	font-size: 1rem;
+	color: #cccccc;
+}
+
+
+
+table {
+    width: 90%; 
+    border-collapse: collapse;
+    margin: 20px auto; 
+}
+
+table, th, td {
+   border: transparent;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px; 
+   
+}
+
+th {
+    background-color: #3C41FF;
+    color: white;
+}
+
+td{
+    font-family: 'Montserrat';
+}
+
+.btnEditar{
+  text-decoration: none;
+}
+
+.btnEliminar{
+    text-decoration: none;
+    margin-left: 18px;
+   }
+
+.btnAfegir{
+    position: relative;
+    left: 44.7%;
+    top: 1%;
+    color: #ffffff;
+    background-color: #3C41FF;
+    padding: 0.3%;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: small;
+}
+
+.btnAfegir:hover{
+   background-color: #151887;
+}
+
+.taulaArtistes {
+    width: 90%; 
+    margin: 0 auto; 
+}
+
+.artista-imatge-login{
+    width: 5vw;
+    height: 10vh;
+    object-fit: cover; 
+}
+
+.botoEditar, .botoBorrar {
+    color: white;
+    background-color: #3C41FF;
+    padding: 4px 8px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.botoEditar:hover, .botoBorrar:hover {
+    background-color: #0e1e5e;
+}
+
+h3 {
+    color: white;
+    margin-bottom: 10px;
+    text-align: left; 
+    margin-left: 5%; 
+}
+.form-horizontal{
+	margin-left: 3%;
+	margin-top: -2%;
+}
+.form-label {
+    color: white;
+    margin-bottom: 3px;
+    margin-left: 5%; 
+}
+
+.control-formulari {
+    width: 80%; 
+    padding: 8px; 
+    margin: 5px auto; 
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button[type="submit"] {
+    background-color: #3C41FF;
+    color: white;
+    padding: 8px 12px; 
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0e1e5e;
+}
+
+
+.filters-container {
+    margin-top: 0.5%;
+    /* padding-left: 24vw; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    
+    
+}
+
+.filters-container select,
+.filters-container input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #aaaaaa;
+    background-color: #3C41FF;
+    color: white;
+    margin-bottom: 10px; 
+    transition: border-color 0.3s ease;
+    margin-right: 13px;
+   
+}
+
+
+
+.filters-container select:focus,
+.filters-container input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.filters-container select:hover,
+.filters-container input:hover {
+    background-color: #2f36a3;
+}
+
+.filters-container input::placeholder {
+    color: white;
+}
+
+.filters-container button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* #missatge{
+	color: red;
+	margin-top: 20%;
+} */
+
+#alex-foto{
+	scale: 60%;
+	position: relative;
+	margin-top: -60%;
+	margin-left: 35%;
+}
+
+#nil-foto{
+	scale: 60%;
+	position: relative;
+	margin-top: -35%;
+	margin-left: 60%;
+}
+form{
+    margin-left: 2vw;
+    margin-top: 3vh;
+}
+
+form input, form label, form select, form button{
+ margin-top: 1%;
+}
+
+form input, form option{
+    font-family: 'Montserrat', sans-serif;
+}
+
